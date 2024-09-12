@@ -1,0 +1,20 @@
+{
+  "name": "moonpay-websdk-buy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --port=8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@moonpay/moonpay-js": "^0.6.1",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
