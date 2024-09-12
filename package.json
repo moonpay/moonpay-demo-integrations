@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "git-filter-repo": "^0.0.30"
+  }
+}
