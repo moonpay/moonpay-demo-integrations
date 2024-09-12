@@ -1,6 +1,6 @@
-#MoonPay Web SDK - Sell
+# MoonPay Web SDK - Sell
 
-##How to use:
+## How to use:
 1. Replace the apiKey variable in index.js with your API Key from the MoonPay Dashboard (dashboard.moonpay.com/developers)
 2. Replace secretKey in signUrl.mjs with your Secret Key from the MoonPay Dashboard (dashboard.moonpay.com/developers)
 3. If running locally, set up your integration on a port. 
