@@ -12,5 +12,5 @@
 5. If moving to production, along with switching to live API keys and "environment:" to "production" in index.js, make sure that the URL in line 55 of index.js is set to buy.moonpay.com instead of buy-sandbox.moonpay.com
 6. Allow-list your production domain on dashboard.moonpay.com/developers
 
-run `npm start` to start index.js
+run `npm start` to start index.js\
 run `node signUrl.mjs` to start signUrl.mjs
