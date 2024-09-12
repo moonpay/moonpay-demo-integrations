@@ -5,9 +5,9 @@
 2. Replace secretKey in signUrl.mjs with your Secret Key from the MoonPay Dashboard (dashboard.moonpay.com/developers)
 3. If running locally, set up your integration on a port.\
     To do this:\
-        &nbsp;&nbsp;&nbsp;a. Navigate to the directory containing index.html and index.js\
-        &nbsp;&nbsp;&nbsp;b. Run python -m http.server 8080\
-        &nbsp;&nbsp;&nbsp;c. You may also run "python3", as well as modify the port on which you deploy.\
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Navigate to the directory containing index.html and index.js\
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Run python -m http.server 8080\
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. You may also run "python3", as well as modify the port on which you deploy.\
 4. To view your integration, navigate to 'http://localhost:8080' in your browser
 5. If moving to production, along with switching to live API keys and "environment:" to "production" in index.js, make sure that the URL in line 55 of index.js is set to buy.moonpay.com instead of buy-sandbox.moonpay.com
 6. Allow-list your production domain on dashboard.moonpay.com/developers
