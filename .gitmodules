@@ -1,0 +1,15 @@
+[submodule "moonpay-react-buy"]
+  path = moonpay-react-buy
+  url = https://github.com/moonpay-demo-integrations/moonpay-react-buy.git
+
+[submodule "moonpay-react-sell"]
+  path = moonpay-react-sell
+  url = https://github.com/moonpay-demo-integrations/moonpay-react-sell.git
+
+[submodule "moonpay-websdk-buy"]
+  path = moonpay-websdk-buy
+  url = https://github.com/moonpay-demo-integrations/moonpay-websdk-buy.git
+
+[submodule "moonpay-websdk-sell"]
+  path = moonpay-websdk-sell
+  url = https://github.com/moonpay-demo-integrations/moonpay-websdk-sell.git
