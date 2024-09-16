@@ -1,5 +1,8 @@
 # MoonPay Web SDK - Sell
 
+**IMPORTANT NOTE:** Be sure to follow best practices with regards to the security of your API keys! This integration and the below instructions are for demo purposes only and it is expected that in production builds, API keys will not be exposed directly in 
+client-side files. It is the responsibility of the partner to rework and secure any integrations that originate from this directory.
+
 ## How to use:
 1. Replace the apiKey variable in index.js with your API Key from the MoonPay Dashboard (dashboard.moonpay.com/developers)
 2. Replace secretKey in signUrl.mjs with your Secret Key from the MoonPay Dashboard (dashboard.moonpay.com/developers)
