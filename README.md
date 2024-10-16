@@ -7,7 +7,7 @@ This repository contains four example projects demonstrating how to integrate Mo
 2. **moonpay-react-sell** - A React-based implementation for the MoonPay Sell widget.
 3. **moonpay-web-buy** - A vanilla JavaScript implementation for the MoonPay Buy widget.
 4. **moonpay-web-sell** - A vanilla JavaScript implementation for the MoonPay Sell widget.
-5. **moonpay-react-sell-oninitiatedeposit** - A vanilla JavaScript implementation for the MoonPay Sell widget with OnInitiateDeposit.
+5. **moonpay-react-sell-oninitiatedeposit** - A React-based JavaScript implementation for the MoonPay Sell widget with OnInitiateDeposit.
 
 ## Cloning the Repository
 To clone this repository to your local machine, follow these steps:
