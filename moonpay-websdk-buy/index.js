@@ -30,13 +30,8 @@ document.getElementById('startTransaction').addEventListener('click', async () =
         // Generate the URL that needs to be signed
         const urlForSignature = widget?.generateUrlForSigning();
 
-        console.log("This is the URL for signature: " + urlForSignature)
-
         // Send the URL to your backend for signing and fetch the signature
-        // Append the URL for signing as a query parameter
-        const signatureResponse = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(urlForSignature)}`, {
-            method: 'GET',  // Now using GET and passing the URL in query string
-        });
+        const signatureResponse = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(urlForSignature)}`);
 
         if (!signatureResponse.ok) {
             throw new Error('Failed to fetch signature');
@@ -46,7 +41,6 @@ document.getElementById('startTransaction').addEventListener('click', async () =
         const { signature } = await signatureResponse.json();
 
         // Update the widget with the signed URL
-        console.log("This is the signature: " + signature)
         widget.updateSignature(signature);
 
         // Show the MoonPay widget
