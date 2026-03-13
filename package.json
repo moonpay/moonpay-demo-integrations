@@ -1,5 +1,25 @@
 {
-  "dependencies": {
-    "git-filter-repo": "^0.0.30"
+  "name": "moonpay-demo-integrations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MoonPay SDK demo integrations monorepo",
+  "workspaces": [
+    "moonpay-react-buy",
+    "moonpay-react-sell",
+    "moonpay-websdk-buy",
+    "moonpay-websdk-sell",
+    "moonpay-react-sell-oninitiatedeposit/react-widget-integration",
+    "moonpay-react-sell-oninitiatedeposit/hosted-wallet-page",
+    "server"
+  ],
+  "scripts": {
+    "setup": "npm install",
+    "start:react-buy": "npm start --workspace=moonpay-react-buy",
+    "start:react-sell": "npm start --workspace=moonpay-react-sell",
+    "start:websdk-buy": "npm start --workspace=moonpay-websdk-buy",
+    "start:websdk-sell": "npm start --workspace=moonpay-websdk-sell",
+    "start:react-sell-deposit": "npm start --workspace=moonpay-react-sell-oninitiatedeposit/react-widget-integration",
+    "start:wallet-page": "npm start --workspace=moonpay-react-sell-oninitiatedeposit/hosted-wallet-page",
+    "start:server": "npm start --workspace=server"
   }
 }
