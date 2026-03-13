@@ -1,8 +1,20 @@
-// This is an endpoint used to sign an attached MoonPay widget URL when called
+// URL Signing Server for MoonPay Widget
+//
+// WHY THIS EXISTS:
+// MoonPay requires all widget URLs to be signed with your secret key (HMAC-SHA256)
+// before the widget will load. This prevents tampering with parameters like wallet
+// addresses and currency amounts on the client side. The secret key must NEVER be
+// exposed in frontend code — it stays on this server.
+//
+// FLOW:
+// 1. Frontend builds a widget URL with parameters (apiKey, walletAddress, etc.)
+// 2. Frontend sends that URL to this server's /sign-url endpoint
+// 3. This server signs the URL's query string with HMAC-SHA256 using the secret key
+// 4. The signature is returned to the frontend, which passes it to the MoonPay SDK
 
-import express from 'express';  // Import the express framework for building the web server
-import cors from 'cors';        // Import the cors middleware to enable Cross-Origin Resource Sharing
-import crypto from 'crypto';    // Import the crypto module for cryptographic functions
+import express from 'express';
+import cors from 'cors';
+import crypto from 'crypto';
 
 const app = express();          // Create an express application instance
 app.use(cors());                // Use the cors middleware to allow requests from different origins

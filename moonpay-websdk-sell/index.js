@@ -28,13 +28,10 @@ document.getElementById('startTransaction').addEventListener('click', async () =
             },
         });
 
-        // Generate the URL that needs to be signed
+        // Generate the widget URL, then send it to our backend for signing.
+        // MoonPay requires an HMAC-SHA256 signature to prevent client-side
+        // tampering with parameters like wallet addresses and amounts.
         const urlForSignature = widget?.generateUrlForSigning();
-
-        console.log("This is the URL for signature: " + urlForSignature)
-
-        // Send the URL to your backend for signing and fetch the signature
-        // Append the URL for signing as a query parameter
         const signatureResponse = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(urlForSignature)}`, {
             method: 'GET',  // Now using GET and passing the URL in query string
         });
