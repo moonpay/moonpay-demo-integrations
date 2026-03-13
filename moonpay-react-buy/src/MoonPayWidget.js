@@ -31,6 +31,25 @@ const MoonPayWidget = () => {
     baseCurrencyCode: "usd",
     //paymentMethod: "", // Refer to documentation for various payment methods
     onUrlSignatureRequested: handleGetSignature,
+
+    // --- Event Handlers ---
+    // Uncomment any of these to listen to widget lifecycle events.
+    // See: https://docs.moonpay.com/docs/sdk-events
+
+    // onTransactionCreated: (transaction) => {
+    //   console.log("Transaction created:", transaction);
+    // },
+    // onTransactionCompleted: (transaction) => {
+    //   console.log("Transaction completed:", transaction);
+    //   // e.g. update your UI, redirect the user, etc.
+    // },
+    // onTransactionFailed: (transaction) => {
+    //   console.error("Transaction failed:", transaction);
+    // },
+    // onCloseOverlay: () => {
+    //   console.log("Widget overlay closed");
+    //   setShowWidget(false);
+    // },
   };
 
   const handleButtonClick = () => {

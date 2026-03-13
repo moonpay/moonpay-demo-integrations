@@ -30,6 +30,24 @@ const MoonPayWidget = () => {
     variant: "overlay",
     lockAmount: false,
     onUrlSignatureRequested: handleGetSignature,
+
+    // --- Event Handlers ---
+    // Uncomment any of these to listen to widget lifecycle events.
+    // See: https://docs.moonpay.com/docs/sdk-events
+
+    // onTransactionCreated: (transaction) => {
+    //   console.log("Transaction created:", transaction);
+    // },
+    // onTransactionCompleted: (transaction) => {
+    //   console.log("Transaction completed:", transaction);
+    // },
+    // onTransactionFailed: (transaction) => {
+    //   console.error("Transaction failed:", transaction);
+    // },
+    // onCloseOverlay: () => {
+    //   console.log("Widget overlay closed");
+    //   setShowWidget(false);
+    // },
   };
 
   const handleButtonClick = () => {
