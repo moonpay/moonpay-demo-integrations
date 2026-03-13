@@ -20,6 +20,19 @@ const MoonPayWidget = () => {
     }
   };
 
+  // --- Theme Customization ---
+  // Uncomment and modify to customize the widget appearance.
+  // See: https://docs.moonpay.com/docs/widget-customization
+  //
+  // const theme = {
+  //   colorPrimary: "#7B61FF",           // Primary accent color (buttons, links)
+  //   colorBackground: "#1A1A2E",        // Widget background color
+  //   colorText: "#FFFFFF",              // Primary text color
+  //   colorTextSecondary: "#A0A0B0",     // Secondary text color
+  //   borderRadius: 16,                  // Border radius in pixels
+  //   isDark: true,                      // Enable dark mode
+  // };
+
   const configuration = {
     apiKey,
     defaultCurrencyCode: "eth",
@@ -30,6 +43,7 @@ const MoonPayWidget = () => {
     lockAmount: true,
     baseCurrencyCode: "usd",
     //paymentMethod: "", // Refer to documentation for various payment methods
+    // theme,  // Uncomment to apply the theme object above
     onUrlSignatureRequested: handleGetSignature,
   };
 

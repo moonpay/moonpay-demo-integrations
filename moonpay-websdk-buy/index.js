@@ -12,6 +12,19 @@ document.getElementById('startTransaction').addEventListener('click', async () =
             return;
         }
 
+        // --- Theme Customization ---
+        // Uncomment and modify to customize the widget appearance.
+        // See: https://docs.moonpay.com/docs/widget-customization
+        //
+        // const theme = {
+        //     colorPrimary: "#7B61FF",
+        //     colorBackground: "#1A1A2E",
+        //     colorText: "#FFFFFF",
+        //     colorTextSecondary: "#A0A0B0",
+        //     borderRadius: 16,
+        //     isDark: true,
+        // };
+
         // Initialize the MoonPay widget without signing the URL yet
         const widget = moonPay?.({
             flow: "buy",
@@ -24,6 +37,7 @@ document.getElementById('startTransaction').addEventListener('click', async () =
                 baseCurrencyCode: 'usd',
                 baseCurrencyAmount: 35,
                 redirectUrl: 'https://www.moonpay.com',
+                // theme: JSON.stringify(theme), // Uncomment to apply theme
             },
         });
 
