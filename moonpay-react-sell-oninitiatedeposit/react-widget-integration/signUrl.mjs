@@ -1,13 +1,18 @@
 // This is an endpoint used to sign an attached MoonPay widget URL when called
 
-import express from 'express';  // Import the express framework for building the web server
-import cors from 'cors';        // Import the cors middleware to enable Cross-Origin Resource Sharing
-import crypto from 'crypto';    // Import the crypto module for cryptographic functions
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import crypto from 'crypto';
 
-const app = express();          // Create an express application instance
-app.use(cors());                // Use the cors middleware to allow requests from different origins
+const app = express();
+app.use(cors());
 
-const secretKey = 'Replace with your secret key';  // Define the secret key used for signing URLs
+const secretKey = process.env.MOONPAY_SECRET_KEY;
+if (!secretKey) {
+  console.error('MOONPAY_SECRET_KEY is not set. Copy .env.example to .env and fill in your key.');
+  process.exit(1);
+}
 
 const generateSignature = (url) => {
   const signature = crypto

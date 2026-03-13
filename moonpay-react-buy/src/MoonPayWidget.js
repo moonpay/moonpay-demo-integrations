@@ -4,7 +4,7 @@ import { MoonPayBuyWidget, MoonPayProvider } from "@moonpay/moonpay-react";
 const MoonPayWidget = () => {
   const [showWidget, setShowWidget] = useState(false);
 
-  const apiKey = "your_api_key";
+  const apiKey = process.env.REACT_APP_MOONPAY_API_KEY || "your_api_key";
 
   const handleGetSignature = async (url) => {
     try {
