@@ -12,14 +12,19 @@
 // 3. This server signs the URL's query string with HMAC-SHA256 using the secret key
 // 4. The signature is returned to the frontend, which passes it to the MoonPay SDK
 
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import crypto from 'crypto';
 
-const app = express();          // Create an express application instance
-app.use(cors());                // Use the cors middleware to allow requests from different origins
+const app = express();
+app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001'] }));
 
-const secretKey = 'Replace with your secret key';  // Define the secret key used for signing URLs
+const secretKey = process.env.MOONPAY_SECRET_KEY;
+if (!secretKey) {
+  console.error('MOONPAY_SECRET_KEY is not set. Copy .env.example to .env and fill in your key.');
+  process.exit(1);
+}
 
 const generateSignature = (url) => {
   return crypto

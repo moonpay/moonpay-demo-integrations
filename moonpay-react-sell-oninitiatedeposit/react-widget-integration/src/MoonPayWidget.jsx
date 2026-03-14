@@ -7,7 +7,7 @@ const MoonPayWidget = () => {
   const [quoteCurrencyAmount, setQuoteCurrencyAmount] = useState("50");  // Default amount
   const [depositId, setDepositId] = useState(null); // Store depositId
 
-  const apiKey = "Replace with your API Key"; 
+  const apiKey = process.env.REACT_APP_MOONPAY_API_KEY || "your_api_key";
 
   // Called by the MoonPay SDK when it needs the widget URL signed.
   // The SDK passes the full widget URL — we forward it to our backend
