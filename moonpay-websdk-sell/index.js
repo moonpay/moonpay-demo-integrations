@@ -28,7 +28,9 @@ document.getElementById('startTransaction').addEventListener('click', async () =
             },
         });
 
-        // Generate the URL that needs to be signed
+        // Generate the widget URL, then send it to our backend for signing.
+        // MoonPay requires an HMAC-SHA256 signature to prevent client-side
+        // tampering with parameters like wallet addresses and amounts.
         const urlForSignature = widget?.generateUrlForSigning();
 
         // Send the URL to your backend for signing and fetch the signature
@@ -46,6 +48,22 @@ document.getElementById('startTransaction').addEventListener('click', async () =
 
         // Show the MoonPay widget
         widget?.show();
+
+        // --- Event Handlers ---
+        // The Web SDK emits events you can listen to for transaction lifecycle updates.
+        // Uncomment any of these to handle widget events:
+        //
+        // widget?.addEventListener('transactionCreated', (transaction) => {
+        //     console.log('Transaction created:', transaction);
+        // });
+        //
+        // widget?.addEventListener('transactionCompleted', (transaction) => {
+        //     console.log('Transaction completed:', transaction);
+        // });
+        //
+        // widget?.addEventListener('transactionFailed', (transaction) => {
+        //     console.error('Transaction failed:', transaction);
+        // });
 
     } catch (error) {
         console.error('Error initializing MoonPay widget:', error);
