@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 
 // Use CORS to allow the frontend to make requests to the backend
-app.use(cors());
+app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001'] }));
 
 // API route for signing transaction details
 app.get('/api/wallet-sign', (req, res) => {
