@@ -32,9 +32,9 @@ document.getElementById('startTransaction').addEventListener('click', async () =
         // MoonPay requires an HMAC-SHA256 signature to prevent client-side
         // tampering with parameters like wallet addresses and amounts.
         const urlForSignature = widget?.generateUrlForSigning();
-        const signatureResponse = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(urlForSignature)}`, {
-            method: 'GET',  // Now using GET and passing the URL in query string
-        });
+
+        // Send the URL to your backend for signing and fetch the signature
+        const signatureResponse = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(urlForSignature)}`);
 
         if (!signatureResponse.ok) {
             throw new Error('Failed to fetch signature');
@@ -44,7 +44,6 @@ document.getElementById('startTransaction').addEventListener('click', async () =
         const { signature } = await signatureResponse.json();
 
         // Update the widget with the signed URL
-        console.log("This is the signature: " + signature)
         widget.updateSignature(signature);
 
         // Show the MoonPay widget
