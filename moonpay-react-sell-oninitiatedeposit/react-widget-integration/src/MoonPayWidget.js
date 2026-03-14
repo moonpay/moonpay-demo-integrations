@@ -9,6 +9,9 @@ const MoonPayWidget = () => {
 
   const apiKey = process.env.REACT_APP_MOONPAY_API_KEY || "your_api_key";
 
+  // Called by the MoonPay SDK when it needs the widget URL signed.
+  // The SDK passes the full widget URL — we forward it to our backend
+  // which signs it with the secret key and returns the HMAC signature.
   const handleGetSignature = async (url) => {
     try {
       const signature = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(url)}`);
