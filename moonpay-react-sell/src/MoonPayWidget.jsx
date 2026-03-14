@@ -6,14 +6,14 @@ const MoonPayWidget = () => {
 
   const apiKey = "your_api_key";
 
+  // Called by the MoonPay SDK when it needs the widget URL signed.
+  // The SDK passes the full widget URL — we forward it to our backend
+  // which signs it with the secret key and returns the HMAC signature.
   const handleGetSignature = async (url) => {
     try {
-      console.log("url first: " + url)
-      // Fetch the signature from the backend
-      const signature = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(url)}`);
-      const signatureText = await signature.text();
-      console.log("this is the signature from the backend" + signatureText);
-      return signatureText
+      const response = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(url)}`);
+      const { signature } = await response.json();
+      return signature;
     } catch (error) {
       console.error('Error fetching the signature:', error);
       return '';
@@ -30,6 +30,24 @@ const MoonPayWidget = () => {
     variant: "overlay",
     lockAmount: false,
     onUrlSignatureRequested: handleGetSignature,
+
+    // --- Event Handlers ---
+    // Uncomment any of these to listen to widget lifecycle events.
+    // See: https://docs.moonpay.com/docs/sdk-events
+
+    // onTransactionCreated: (transaction) => {
+    //   console.log("Transaction created:", transaction);
+    // },
+    // onTransactionCompleted: (transaction) => {
+    //   console.log("Transaction completed:", transaction);
+    // },
+    // onTransactionFailed: (transaction) => {
+    //   console.error("Transaction failed:", transaction);
+    // },
+    // onCloseOverlay: () => {
+    //   console.log("Widget overlay closed");
+    //   setShowWidget(false);
+    // },
   };
 
   const handleButtonClick = () => {
