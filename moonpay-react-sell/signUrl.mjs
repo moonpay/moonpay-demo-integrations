@@ -37,7 +37,7 @@ app.get('/sign-url', (req, res) => {
 
   try {
     const signature = generateSignature(url);
-    res.send(signature);
+    res.json({ signature });
   } catch (error) {
     console.error('Error generating the signature:', error);  // Log any errors that occur during signing
     res.status(500).json({ error: 'Internal server error' });  // Return a 500 status code for server errors

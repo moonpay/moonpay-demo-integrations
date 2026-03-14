@@ -14,9 +14,9 @@ const MoonPayWidget = () => {
   // which signs it with the secret key and returns the HMAC signature.
   const handleGetSignature = async (url) => {
     try {
-      const signature = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(url)}`);
-      const signatureText = await signature.text();
-      return signatureText;
+      const response = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(url)}`);
+      const { signature } = await response.json();
+      return signature;
     } catch (error) {
       console.error('Error fetching the signature:', error);
       return '';
