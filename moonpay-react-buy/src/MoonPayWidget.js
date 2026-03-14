@@ -6,6 +6,9 @@ const MoonPayWidget = () => {
 
   const apiKey = "your_api_key";
 
+  // Called by the MoonPay SDK when it needs the widget URL signed.
+  // The SDK passes the full widget URL — we forward it to our backend
+  // which signs it with the secret key and returns the HMAC signature.
   const handleGetSignature = async (url) => {
     try {
       const response = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(url)}`);
@@ -17,6 +20,19 @@ const MoonPayWidget = () => {
     }
   };
 
+  // --- Theme Customization ---
+  // Uncomment and modify to customize the widget appearance.
+  // See: https://docs.moonpay.com/docs/widget-customization
+  //
+  // const theme = {
+  //   colorPrimary: "#7B61FF",           // Primary accent color (buttons, links)
+  //   colorBackground: "#1A1A2E",        // Widget background color
+  //   colorText: "#FFFFFF",              // Primary text color
+  //   colorTextSecondary: "#A0A0B0",     // Secondary text color
+  //   borderRadius: 16,                  // Border radius in pixels
+  //   isDark: true,                      // Enable dark mode
+  // };
+
   const configuration = {
     apiKey,
     defaultCurrencyCode: "eth",
@@ -27,7 +43,27 @@ const MoonPayWidget = () => {
     lockAmount: true,
     baseCurrencyCode: "usd",
     //paymentMethod: "", // Refer to documentation for various payment methods
+    // theme,  // Uncomment to apply the theme object above
     onUrlSignatureRequested: handleGetSignature,
+
+    // --- Event Handlers ---
+    // Uncomment any of these to listen to widget lifecycle events.
+    // See: https://docs.moonpay.com/docs/sdk-events
+
+    // onTransactionCreated: (transaction) => {
+    //   console.log("Transaction created:", transaction);
+    // },
+    // onTransactionCompleted: (transaction) => {
+    //   console.log("Transaction completed:", transaction);
+    //   // e.g. update your UI, redirect the user, etc.
+    // },
+    // onTransactionFailed: (transaction) => {
+    //   console.error("Transaction failed:", transaction);
+    // },
+    // onCloseOverlay: () => {
+    //   console.log("Widget overlay closed");
+    //   setShowWidget(false);
+    // },
   };
 
   const handleButtonClick = () => {
