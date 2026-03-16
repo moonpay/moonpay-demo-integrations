@@ -27,7 +27,10 @@ import cors from 'cors';
 import crypto from 'crypto';
 
 const app = express();
-app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001'] }));
+const allowedOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(',')
+  : ['http://localhost:3000', 'http://localhost:3001'];
+app.use(cors({ origin: allowedOrigins }));
 
 const secretKey = process.env.MOONPAY_SECRET_KEY;
 if (!secretKey) {
