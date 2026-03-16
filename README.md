@@ -1,5 +1,7 @@
 # MoonPay Demo Integrations
 
+> ⚠️ **Disclaimer:** This repository contains example/sample code for demonstration and testing purposes only. It should **not** be considered production-ready. Use at your own risk and always perform a thorough security review before deploying any code to production.
+
 A monorepo of demo projects showing how to integrate [MoonPay](https://www.moonpay.com/) widgets for buying and selling cryptocurrency. Each project demonstrates a different SDK or integration pattern.
 
 ## Projects
@@ -111,6 +113,3 @@ npm run start:wallet-page  # Start wallet signing page
 - **Signing Server**: Express.js + `dotenv` + Node.js `crypto`
 - **Monorepo**: npm workspaces
 
----
-
-> ⚠️ **Disclaimer:** This repository contains example/sample code for demonstration and testing purposes only. It should **not** be considered production-ready. Use at your own risk and always perform a thorough security review before deploying any code to production.
