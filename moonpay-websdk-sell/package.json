@@ -11,10 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@moonpay/moonpay-js": "0.7.6",
-    "cors": "2.8.5",
-    "dotenv": "16.4.5",
-    "express": "4.19.2"
+    "@moonpay/moonpay-js": "0.7.6"
   },
   "devDependencies": {
     "live-server": "1.2.2"
