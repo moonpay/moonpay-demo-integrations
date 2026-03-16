@@ -16,6 +16,9 @@ const MoonPayWidget = () => {
     try {
       const signingServerUrl = import.meta.env.VITE_SIGNING_SERVER_URL || 'http://localhost:5000';
       const response = await fetch(`${signingServerUrl}/sign-url?url=${encodeURIComponent(url)}`);
+      if (!response.ok) {
+        throw new Error(`Signing server returned ${response.status}`);
+      }
       const { signature } = await response.json();
       return signature;
     } catch (error) {
