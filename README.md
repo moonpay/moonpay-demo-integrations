@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="MoonPay Demo Integrations" />
+</p>
+
 # MoonPay Demo Integrations
 
 > ⚠️ **Disclaimer:** This repository contains example/sample code for demonstration and testing purposes only. It should **not** be considered production-ready. Use at your own risk and always perform a thorough security review before deploying any code to production.
