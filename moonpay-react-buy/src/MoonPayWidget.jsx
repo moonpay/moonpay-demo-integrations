@@ -12,6 +12,9 @@ const MoonPayWidget = () => {
   const handleGetSignature = async (url) => {
     try {
       const response = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(url)}`);
+      if (!response.ok) {
+        throw new Error(`Signing server returned ${response.status}`);
+      }
       const { signature } = await response.json();
       return signature;
     } catch (error) {
