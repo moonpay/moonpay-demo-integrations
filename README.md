@@ -110,3 +110,7 @@ npm run start:wallet-page  # Start wallet signing page
 - **Web SDK**: Vanilla JS + `@moonpay/moonpay-js` via CDN
 - **Signing Server**: Express.js + `dotenv` + Node.js `crypto`
 - **Monorepo**: npm workspaces
+
+---
+
+> ⚠️ **Disclaimer:** This repository contains example/sample code for demonstration and testing purposes only. It should **not** be considered production-ready. Use at your own risk and always perform a thorough security review before deploying any code to production.
