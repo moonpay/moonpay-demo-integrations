@@ -34,7 +34,8 @@ document.getElementById('startTransaction').addEventListener('click', async () =
         const urlForSignature = widget?.generateUrlForSigning();
 
         // Send the URL to your backend for signing and fetch the signature
-        const signatureResponse = await fetch(`http://localhost:5000/sign-url?url=${encodeURIComponent(urlForSignature)}`);
+        const signingServerUrl = 'http://localhost:5000'; // Update this when deploying
+        const signatureResponse = await fetch(`${signingServerUrl}/sign-url?url=${encodeURIComponent(urlForSignature)}`);
 
         if (!signatureResponse.ok) {
             throw new Error('Failed to fetch signature');
