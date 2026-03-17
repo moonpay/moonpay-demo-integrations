@@ -1,3 +1,10 @@
+// ─── Configuration ───────────────────────────────────────────
+// Update these values for your environment.
+// For local development, the defaults below should work out of the box.
+const SIGNING_SERVER_URL = 'http://localhost:5000';
+const MOONPAY_API_KEY = 'pk_test_your_api_key_here';
+// ─────────────────────────────────────────────────────────────
+
 // Import MoonPay SDK from CDN
 import { loadMoonPay } from 'https://cdn.skypack.dev/@moonpay/moonpay-js';
 
@@ -31,7 +38,7 @@ document.getElementById('startTransaction').addEventListener('click', async () =
             environment: "sandbox", // Use "production" for live environments
             variant: "overlay",
             params: {
-                apiKey: 'your_api_key', // Replace with your actual API key
+                apiKey: MOONPAY_API_KEY,
                 currencyCode: 'eth',
                 walletAddress: 'wallet_address', // Ensure this matches the currencyCode chain
                 baseCurrencyCode: 'usd',
@@ -47,8 +54,7 @@ document.getElementById('startTransaction').addEventListener('click', async () =
         const urlForSignature = widget?.generateUrlForSigning();
 
         // Send the URL to your backend for signing and fetch the signature
-        const signingServerUrl = 'http://localhost:5000'; // Update this when deploying
-        const signatureResponse = await fetch(`${signingServerUrl}/sign-url?url=${encodeURIComponent(urlForSignature)}`);
+        const signatureResponse = await fetch(`${SIGNING_SERVER_URL}/sign-url?url=${encodeURIComponent(urlForSignature)}`);
 
         if (!signatureResponse.ok) {
             throw new Error('Failed to fetch signature');
