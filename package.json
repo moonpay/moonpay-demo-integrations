@@ -20,6 +20,10 @@
     "start:websdk-sell": "npm start --workspace=moonpay-websdk-sell",
     "start:react-sell-deposit": "npm start --workspace=moonpay-react-sell-oninitiatedeposit/react-widget-integration",
     "start:wallet-page": "npm start --workspace=moonpay-react-sell-oninitiatedeposit/hosted-wallet-page",
-    "start:server": "npm start --workspace=server"
+    "start:server": "npm start --workspace=server",
+    "build": "npm run build --workspace=moonpay-react-buy && npm run build --workspace=moonpay-react-sell && npm run build --workspace=moonpay-react-sell-oninitiatedeposit/react-widget-integration && npm run build --workspace=moonpay-react-sell-oninitiatedeposit/hosted-wallet-page",
+    "test": "npm test --workspaces --if-present",
+    "clean": "rm -rf node_modules dist */node_modules */dist moonpay-react-sell-oninitiatedeposit/*/node_modules moonpay-react-sell-oninitiatedeposit/*/dist",
+    "dev": "npm run start:server"
   }
 }
