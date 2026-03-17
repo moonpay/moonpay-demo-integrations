@@ -1,36 +1,32 @@
 # MoonPay React SDK Demo - Sell
 
-## How to use:
+Demonstrates a **sell crypto** widget using [`@moonpay/moonpay-react`](https://www.npmjs.com/package/@moonpay/moonpay-react).
 
-**IMPORTANT NOTE:** Be sure to follow best practices with regards to the security of your API keys! This integration and the below instructions are for demo purposes only and it is expected that in production builds, API keys will not be exposed directly in 
-client-side files. It is the responsibility of the partner to rework and secure any integrations that originate from this directory.
+> **Disclaimer:** This is sample code for demo/testing purposes only. Never expose API keys in client-side code in production. See the security note in the [root README](../README.md).
 
-### Installing Dependencies
-**If you are using npm:**
-1. Navigate to the project directory after cloning
-```
-cd /path/to/your/repo
-```
-2. Run the following command to install all the dependencies listed in package.json:
-```
+## Quick Start
+
+All commands are run from the **monorepo root** (not this directory).
+
+```bash
+# 1. Install all dependencies (from repo root)
 npm install
+
+# 2. Configure environment variables
+cp server/.env.example server/.env   # add your MOONPAY_SECRET_KEY
+cp moonpay-react-sell/.env.example moonpay-react-sell/.env  # optional
+
+# 3. Start the shared signing server (port 5000)
+npm run start:server
+
+# 4. Start this demo (port 3000)
+npm run start:react-sell
 ```
 
-**If you are using Yarn**
-1. Navigate to the project directory after cloning
-```
-cd /path/to/your/repo
-```
-2. Run the following command to install all the dependencies listed in package.json:
-```
-yarn install
-```
+## What This Demo Does
 
-### Setting up your code:
-1. Replace the apiKey variable in MoonPayWidget.js with your API Key from the MoonPay Dashboard (dashboard.moonpay.com/developers)
-2. Replace secretKey in signUrl.mjs with your Secret Key from the MoonPay Dashboard (dashboard.moonpay.com/developers)
-3. If in production, allow-list your production domain on dashboard.moonpay.com/developers.
-4. If in production, you will need to change your fetch in line 13 of MoonPayWidget.js to reflect the URL of your signature endpoint.
+- Renders the MoonPay sell widget inside a React app (Vite)
+- Sends widget URLs to the shared `server/` signing server for HMAC-SHA256 signing
+- Runs on **port 3000** (Vite dev server); signing server on **port 5000**
 
-run `npm start` to start MoonPayWidget.js in the /src folder
-run `node signUrl.mjs` to start signUrl.mjs
+For full setup details, environment variables, and architecture, see the [root README](../README.md).
