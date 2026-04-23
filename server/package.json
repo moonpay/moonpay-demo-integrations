@@ -1,6 +1,7 @@
 {
   "name": "moonpay-signing-server",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
   "description": "Shared URL signing server for all MoonPay demo integrations",
   "main": "signUrl.mjs",
