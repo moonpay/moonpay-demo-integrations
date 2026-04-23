@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server --port=8080"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,6 @@
     "@moonpay/moonpay-js": "0.7.6"
   },
   "devDependencies": {
-    "live-server": "1.2.2"
+    "vite": "7.3.1"
   }
 }
