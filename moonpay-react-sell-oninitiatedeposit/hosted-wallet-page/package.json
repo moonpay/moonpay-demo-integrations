@@ -1,5 +1,5 @@
 {
-  "name": "hosted-wallet-page",
+  "name": "@moonpay/demo-hosted-wallet-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

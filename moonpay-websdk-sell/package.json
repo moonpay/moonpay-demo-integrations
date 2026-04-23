@@ -1,5 +1,5 @@
 {
-  "name": "moonpay-websdk-sell",
+  "name": "@moonpay/demo-websdk-sell",
   "version": "1.0.0",
   "private": true,
   "main": "index.js",

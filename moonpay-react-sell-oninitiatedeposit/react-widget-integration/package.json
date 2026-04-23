@@ -1,5 +1,5 @@
 {
-  "name": "moonpay-react-sell-oninitiatedeposit",
+  "name": "@moonpay/demo-react-sell-oninitiatedeposit",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
