@@ -4,6 +4,7 @@
   "private": true,
   "description": "MoonPay SDK demo integrations monorepo",
   "workspaces": [
+    "moonpay-nextjs-buy-and-sell",
     "moonpay-react-buy",
     "moonpay-react-sell",
     "moonpay-websdk-buy",
@@ -14,6 +15,7 @@
   ],
   "scripts": {
     "setup": "npm install",
+    "start:nextjs": "npm run dev --workspace=moonpay-nextjs-buy-and-sell",
     "start:react-buy": "npm start --workspace=moonpay-react-buy",
     "start:react-sell": "npm start --workspace=moonpay-react-sell",
     "start:websdk-buy": "npm start --workspace=moonpay-websdk-buy",
@@ -21,9 +23,9 @@
     "start:react-sell-deposit": "npm start --workspace=moonpay-react-sell-oninitiatedeposit/react-widget-integration",
     "start:wallet-page": "npm start --workspace=moonpay-react-sell-oninitiatedeposit/hosted-wallet-page",
     "start:server": "npm start --workspace=server",
-    "build": "npm run build --workspace=moonpay-react-buy && npm run build --workspace=moonpay-react-sell && npm run build --workspace=moonpay-react-sell-oninitiatedeposit/react-widget-integration && npm run build --workspace=moonpay-react-sell-oninitiatedeposit/hosted-wallet-page",
+    "build": "npm run build --workspace=moonpay-nextjs-buy-and-sell && npm run build --workspace=moonpay-react-buy && npm run build --workspace=moonpay-react-sell && npm run build --workspace=moonpay-react-sell-oninitiatedeposit/react-widget-integration && npm run build --workspace=moonpay-react-sell-oninitiatedeposit/hosted-wallet-page",
     "test": "npm test --workspaces --if-present",
-    "clean": "rm -rf node_modules dist */node_modules */dist moonpay-react-sell-oninitiatedeposit/*/node_modules moonpay-react-sell-oninitiatedeposit/*/dist",
+    "clean": "rm -rf node_modules dist */node_modules */dist moonpay-react-sell-oninitiatedeposit/*/node_modules moonpay-react-sell-oninitiatedeposit/*/dist moonpay-nextjs-buy-and-sell/.next moonpay-nextjs-buy-and-sell/node_modules",
     "dev": "npm run start:server"
   }
 }
