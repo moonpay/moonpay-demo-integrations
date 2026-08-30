@@ -13,7 +13,7 @@ All commands are run from the **monorepo root** (not this directory).
 npm install
 
 # 2. Configure environment variables
-cp server/.env.example server/.env   # add your MOONPAY_SECRET_KEY
+cp server/.env.example server/.env   # add MOONPAY_SECRET_KEY and MOONPAY_API_KEY
 cp moonpay-react-sell/.env.example moonpay-react-sell/.env  # optional
 
 # 3. Start the shared signing server (port 5000)

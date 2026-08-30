@@ -11,7 +11,11 @@
 <body>
     <main>
         <h1>MoonPay On-Ramp Integration - Web SDK</h1>
-        <button id="startTransaction">Buy Crypto</button>
+        <button id="startTransaction" type="button">Buy Crypto</button>
+        <!-- Errors are rendered here as well as logged, so a failed signing
+             round-trip is visible without opening devtools. aria-live makes the
+             update audible to screen readers. -->
+        <p id="status" role="status" aria-live="polite"></p>
     </main>
 
     <script type="module" src="./index.js"></script>

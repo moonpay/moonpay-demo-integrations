@@ -1,6 +1,6 @@
 # MoonPay Web SDK Demo - Buy
 
-Demonstrates a **buy crypto** widget using [`@moonpay/moonpay-js`](https://www.npmjs.com/package/@moonpay/moonpay-js) (vanilla JavaScript, loaded via CDN).
+Demonstrates a **buy crypto** widget using [`@moonpay/moonpay-js`](https://www.npmjs.com/package/@moonpay/moonpay-js) (vanilla JavaScript, installed from npm and bundled by Vite).
 
 > **Disclaimer:** This is sample code for demo/testing purposes only. Never expose API keys in client-side code in production. See the security note in the [root README](../README.md).
 
@@ -13,7 +13,7 @@ All commands are run from the **monorepo root** (not this directory).
 npm install
 
 # 2. Configure environment variables
-cp server/.env.example server/.env   # add your MOONPAY_SECRET_KEY
+cp server/.env.example server/.env   # add MOONPAY_SECRET_KEY and MOONPAY_API_KEY
 
 # 3. Start the shared signing server (port 5000)
 npm run start:server
@@ -26,6 +26,6 @@ npm run start:websdk-buy
 
 - Loads the MoonPay buy widget via the Web SDK (no framework required)
 - Sends widget URLs to the shared `server/` signing server for HMAC-SHA256 signing
-- Runs on **port 8080** (live-server); signing server on **port 5000**
+- Runs on **port 8080** (Vite dev server); signing server on **port 5000**
 
 For full setup details, environment variables, and architecture, see the [root README](../README.md).
