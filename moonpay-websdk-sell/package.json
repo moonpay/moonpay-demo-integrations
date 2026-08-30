@@ -2,19 +2,19 @@
   "name": "@moonpay/demo-websdk-sell",
   "version": "1.0.0",
   "private": true,
+  "description": "MoonPay Web SDK sell (off-ramp) demo, vanilla JS",
+  "license": "MIT",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server --port=8080"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@moonpay/moonpay-js": "0.7.6"
   },
   "devDependencies": {
-    "live-server": "1.2.2"
+    "vite": "7.3.5"
   }
 }
