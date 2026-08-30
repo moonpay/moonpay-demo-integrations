@@ -6,11 +6,12 @@
   "description": "Shared URL signing server for all MoonPay demo integrations",
   "main": "signUrl.mjs",
   "scripts": {
-    "start": "node signUrl.mjs"
+    "start": "node signUrl.mjs",
+    "test": "node --test"
   },
   "dependencies": {
     "cors": "2.8.5",
     "dotenv": "16.4.5",
-    "express": "4.22.1"
+    "express": "4.22.2"
   }
 }
